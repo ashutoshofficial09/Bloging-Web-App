@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.body{
+    background-color: rgb(196, 186, 115);
+}
+.login-container{
+    display: flex;
+    height: 576px;
+    align-items: center;
+    justify-content: center;
+}
+.my-card{
+    background-color: rgba(253, 253, 253, 0.659);
+    padding:20px 40px;
+    border-radius: 2%;
+    box-shadow: 0 20px 28px rgba(0,0,0,0.45);
+  box-shadow: 0 20px 28px rgba(0,0,0,0.57);
+  box-shadow: 0 20px 28px rgba(0,0,0,0.45);
+  position: relative;
+}
+.close-btn{
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    right: 0;
+}
+
