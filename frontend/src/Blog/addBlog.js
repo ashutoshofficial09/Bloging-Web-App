@@ -14,13 +14,12 @@ import {
 import { NavLink } from "react-router-dom";
 import appConfig from "../config";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { BlogContext } from "../components/context";
 const AddBlog = () => {
   const url = appConfig.api_url;
 
-  const [currentUser, setCurrentUser] = useState(
-    JSON.parse(sessionStorage.getItem("user"))
-  );
+  const { currentUser } = useContext(BlogContext);
 
   const blogForm = {
     title: "",

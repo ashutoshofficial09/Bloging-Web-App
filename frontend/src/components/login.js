@@ -9,8 +9,8 @@ import { BlogContext } from "./context";
 import "./login.css";
 const Login = () => {
   const url = appConfig.api_url;
-  
-const {setLoggedin}=useContext(BlogContext);
+
+  const { setLoggedin, setCurrentUser } = useContext(BlogContext);
 
   const loginForm = {
     email: "",
@@ -50,6 +50,7 @@ const {setLoggedin}=useContext(BlogContext);
       })
       .then((data) => {
         sessionStorage.setItem("user", JSON.stringify(data));
+        setCurrentUser(data);
         console.log(data);
       });
   };

@@ -1,72 +1,78 @@
 import { Button } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { BlogContext} from "./context";
-import './header.css';
-import  './logoo.png';
-const Header = (props) => {
-   const [loggedin, setloggedin] = useState(BlogContext);
+import { BlogContext } from "./context";
+import "./header.css";
+import "./logoo.png";
+const Header = () => {
+  const { loggedin, setLoggedin, currentUser } = useContext(BlogContext);
+
   useEffect(() => {
-    console.log(loggedin)
-  },[] )
-   const logout = () => {
-      setloggedin(false)
-      sessionStorage.removeItem("user");
+    console.log(loggedin);
+    console.log(currentUser);
+  }, []);
 
-   }
+  const logout = () => {
+    setLoggedin(false);
+    sessionStorage.removeItem("user");
+  };
 
-   const displayLoggedin = () =>{
-     if(loggedin){
-       return(
-         <>
-            <li className="nav-item">
-                <Button onClick={logout()}> 
-                  <NavLink className="nav-link" to="/#">
-                    Log out
-                  </NavLink>
-                </Button>
-              </li>
-              <li className="nav-item">
-                <Button>
-                  <NavLink className="nav-link" to="/addBlog">
-                    Add Blog
-                  </NavLink>
-                </Button>
-              </li>
-         </>
-       )
-     }
-     else{
-        return(
-          <>
+  const displayLoggedin = () => {
+    if (loggedin) {
+      return (
+        <>
           <li className="nav-item">
-                <Button>
-                  <NavLink className="nav-link" to="/signup">
-                    Signup
-                  </NavLink>
-                </Button>
-              </li>
-              <li className="nav-item">
-                <Button>
-                  <NavLink className="nav-link" to="/login">
-                    Login
-                  </NavLink>
-                </Button>
-              </li>
-              
+            <Button onClick={logout()}>
+              <NavLink className="nav-link" to="/#">
+                Log out
+              </NavLink>
+            </Button>
+          </li>
+          <li className="nav-item">
+            <Button>
+              <NavLink className="nav-link" to="/addBlog">
+                Add Blog
+              </NavLink>
+            </Button>
+          </li>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <li className="nav-item">
+            <Button>
+              <NavLink className="nav-link" to="/signup">
+                Signup
+              </NavLink>
+            </Button>
+          </li>
+          <li className="nav-item">
+            <Button>
+              <NavLink className="nav-link" to="/login">
+                Login
+              </NavLink>
+            </Button>
+          </li>
+        </>
+      );
+    }
+  };
 
-          </>
-        );
-     }
-   }
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/home">
-          <img className="img-fluid logo" src="https://www.onblastblog.com/wp-content/uploads/2017/08/blogger-logo.jpg"  height="36px" width="44px" alt="logo"/>
+            <img
+              className="img-fluid logo"
+              src="https://www.onblastblog.com/wp-content/uploads/2017/08/blogger-logo.jpg"
+              height="36px"
+              width="44px"
+              alt="logo"
+            />
           </NavLink>
-          
+
           <button
             className="navbar-toggler"
             type="button"
@@ -92,7 +98,6 @@ const Header = (props) => {
                   Home
                 </NavLink>
               </li>
-              {loggedin}
               <li className="nav-item">
                 <a className="nav-link" href="#">
                   Features
@@ -105,10 +110,8 @@ const Header = (props) => {
               </li>
             </ul>
             <ul className="navbar-nav">
-              
               {displayLoggedin()}
 
-              
               <li className="nav-item">
                 <Button>
                   <NavLink className="nav-link" to="/listBlog">
