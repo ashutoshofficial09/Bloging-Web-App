@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import appConfig from "../config";
 
 const ViewBlog = () => {
   const { id } = useParams();
   const [blogDetail, setBlogDetail] = useState({});
   const [loading, setLoading] = useState(true);
-  const url = app_config.api_url;
+  const url = appConfig.api_url;
 
   const fetchBlogData = () => {
     fetch(url + "/blog/getbyid/" + id)

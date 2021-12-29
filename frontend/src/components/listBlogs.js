@@ -9,10 +9,10 @@ import {
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import app_config from "../config";
+import appConfig from "../config";
 
 const ListBlog = () => {
-  const url = app_config.api_url;
+  const url = appConfig.api_url;
   //state
   const [blogData, setBlogData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,7 +31,8 @@ const ListBlog = () => {
   const displayBlog = () => {
     if (!loading) {
       return (
-        <Grid container spacing={5}>0
+        <Grid container spacing={5}>
+          0
           {blogData.map((blog) => (
             <Grid item md={3}>
               <Card>
@@ -49,7 +50,7 @@ const ListBlog = () => {
                     variant="contained"
                     color="primary"
                   >
-                    Play Video
+                    View Full Blog
                   </Link>
                 </CardContent>
               </Card>
@@ -72,12 +73,12 @@ const ListBlog = () => {
 
         <Grid container justifyContent="space-between" className="mb-3">
           <Grid item>
-            <h3 classNameName="subtitle">All Videos</h3>
+            <h3 classNameName="subtitle">All Blogs</h3>
           </Grid>
 
           <Grid item>
             <Button color="secondary" variant="contained">
-              Show More
+              Show More Blogs
             </Button>
           </Grid>
         </Grid>
