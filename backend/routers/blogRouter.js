@@ -30,6 +30,7 @@ router.get("/getall", (req, res) => {
 router.get("/getbyid/:id", (req, res) => {
   // promise method
   Model.findById(req.params.id)
+    .populate("author")
     .then((data) => {
       console.log("fetched Blog by id");
       res.status(200).json(data);

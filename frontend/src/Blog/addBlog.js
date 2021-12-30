@@ -24,11 +24,29 @@ const AddBlog = () => {
   const blogForm = {
     title: "",
     description: "",
+    tags: [],
     data: {},
+    thumbnail: {},
     author: currentUser._id,
   };
   const [blogData, setBlogData] = useState("");
+
+  const [thumbnail, setThumbnail] = useState("");
+
+  const uploadThumbnail = (e) => {
+    let formdata = new FormData();
+    let file = e.target.files[0];
+    setThumbnail(file.name);
+    formdata.append("file", file);
+
+    fetch(url + "/util/uploadfile", { method: "POST", body: formdata })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   const blogSubmit = (formdata) => {
+    formdata.thumbnail = thumbnail;
+    formdata.data = blogData;
     console.log(formdata);
 
     const reqOpt = {
@@ -100,9 +118,18 @@ const AddBlog = () => {
                       multiline
                       rows={1}
                       onChange={handleChange}
+                      value={values.tags}
                     />
 
                     <br />
+
+                    <input
+                      className="form-control mb-2"
+                      id="thumbnail"
+                      type="file"
+                      onChange={uploadThumbnail}
+                    />
+
                     <div className="text-center">
                       {/* MD editor for inserting blogs */}
 

@@ -1,3 +1,4 @@
+import MDEditor from "@uiw/react-md-editor";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import appConfig from "../config";
@@ -24,10 +25,14 @@ const ViewBlog = () => {
 
   const displayBlog = () => {
     if (!loading) {
-      return <div></div>;
+      return (
+        <div>
+          <MDEditor.Markdown source={blogDetail.data} />
+        </div>
+      );
     }
   };
 
-  return <div></div>;
+  return <div>{displayBlog()}</div>;
 };
 export default ViewBlog;
