@@ -1,3 +1,4 @@
+import { DeleteOutline } from "@mui/icons-material";
 import {
   Button,
   Card,
@@ -5,6 +6,7 @@ import {
   CardMedia,
   Container,
   Grid,
+  IconButton,
   Paper,
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
@@ -17,7 +19,7 @@ const ListBlog = () => {
   const [blogData, setBlogData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchVideos = () => {
+  const fetchBlogs = () => {
     fetch(url + "/blog/getall")
       .then((res) => res.json())
       .then((data) => {
@@ -44,14 +46,29 @@ const ListBlog = () => {
                 <CardContent>
                   <h4>{blog.title}</h4>
                   <p>{blog.description}</p>
-                  <Link
-                    to={"/view/" + blog._id}
-                    component={Button}
-                    variant="contained"
-                    color="primary"
-                  >
-                    View Full Blog
-                  </Link>
+                  <div className="d-flex justify-content-between">
+                    <Link
+                      to={"/view/" + blog._id}
+                      component={Button}
+                      variant="contained"
+                      color="primary"
+                    >
+                      View Full Blog
+                    </Link>
+                    <Link
+                      onClick={() => {
+                        {
+                        }
+                      }}
+                      className="ml-auto"
+                      to={"/delete/"}
+                      component={IconButton}
+                    >
+                      <IconButton>
+                        <DeleteOutline />
+                      </IconButton>
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
             </Grid>
@@ -61,9 +78,9 @@ const ListBlog = () => {
     }
   };
 
-  const swiper = useRef(null);
+  // const swiper = useRef(null);
   useEffect(() => {
-    fetchVideos();
+    fetchBlogs();
   }, []);
 
   return (

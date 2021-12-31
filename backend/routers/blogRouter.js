@@ -40,4 +40,18 @@ router.get("/getbyid/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get("/getbyid/:author", (req, res) => {
+  // promise method
+  Model.find({ author: req.params.id })
+    .populate("author")
+    .then((data) => {
+      console.log("fetched Blog by id:author");
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json(err);
+    });
+});
 module.exports = router;

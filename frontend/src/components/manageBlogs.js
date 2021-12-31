@@ -1,11 +1,11 @@
 import { Alert, Button, Snackbar } from "@mui/material";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import app_config from "../config";
+import appConfig from "../config";
 import UpdateForm from "./updateform";
 
-const ManageUsers = () => {
-  const url = app_config.api_url;
+const ManageBlogs = () => {
+  const url = appConfig.api_url;
 
   const [usersList, setUsersList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -30,7 +30,7 @@ const ManageUsers = () => {
       });
   };
 
-  const deleteUser = (id) => {
+  const deleteBlog = (id) => {
     const reqOpt = {
       method: "DELETE",
     };
@@ -146,4 +146,4 @@ const ManageUsers = () => {
   );
 };
 
-export default ManageUsers;
+export default ManageBlogs;
