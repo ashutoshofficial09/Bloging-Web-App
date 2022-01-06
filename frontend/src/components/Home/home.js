@@ -34,8 +34,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="section-2">
-        <div className="h2 recent-blog-heading">Recent blogs</div>
+      <div className="container section-2 mt-5">
+        <div className="h3 mb-4 recent-blog-heading">Recent blogs</div>
         <div className="container">
           <div className="card">
             <div className="card-body">
@@ -44,6 +44,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <section className="home-blogs"></section>
     </div>
   );
 };

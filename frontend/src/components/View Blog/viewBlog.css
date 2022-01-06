@@ -1,0 +1,6 @@
+.viewBlog-container {
+  background-color: #ced4da;
+  display: flex;
+  align-items: center;
+  padding: 20vh;
+}

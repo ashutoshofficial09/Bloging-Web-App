@@ -4,8 +4,9 @@ import { Formik } from "formik";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
-import appConfig from "../config";
-import { BlogContext } from "./context";
+import appConfig from "../../config";
+import { BlogContext } from "../context";
+
 import "./login.css";
 const Login = () => {
   const url = appConfig.api_url;

@@ -1,9 +1,9 @@
 import { Button } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { BlogContext } from "./context";
+import { BlogContext } from "../context";
 import "./header.css";
-import "./logoo.png";
+import "../logoo.png";
 const Header = () => {
   const { loggedin, setLoggedin, currentUser } = useContext(BlogContext);
 

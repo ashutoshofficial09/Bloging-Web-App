@@ -159,12 +159,6 @@ const ListBlog = () => {
           <Grid item>
             <h3 classNameName="subtitle">All Blogs</h3>
           </Grid>
-
-          <Grid item>
-            <Button color="secondary" variant="contained">
-              Show More Blogs
-            </Button>
-          </Grid>
         </Grid>
         {displayBlog()}
       </Container>
