@@ -109,16 +109,20 @@ const ListBlog = () => {
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <CardMedia
-                  component="img"
-                  image={
-                    "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"
-                  }
-                  height="400vh"
-                />
+                <div class="carousel-item">
+                  <img
+                    className="d-block w-100 height-100vh"
+                    src="https://images.unsplash.com/photo-1587502537147-2ba64a62e3d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1896&q=80"
+                    alt="Second slide"
+                  />
+                </div>
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide" />
+                <img
+                  className="d-block w-100"
+                  src="https://images.unsplash.com/photo-1587502537147-2ba64a62e3d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1896&q=80"
+                  alt="Second slide"
+                />
               </div>
               <div class="carousel-item">
                 <img class="d-block w-100" src="..." alt="Third slide" />

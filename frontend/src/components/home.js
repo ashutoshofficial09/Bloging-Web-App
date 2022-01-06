@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./home.css";
 const Home = () => {
   return (
@@ -22,9 +23,11 @@ const Home = () => {
                 </div>
               </div>
               <div>
-                <button className="btn btn-success">
-                  Let's Start Blogging
-                </button>
+                <NavLink className="link" to="/signup">
+                  <button className="btn btn-success">
+                    Let's Start Blogging
+                  </button>
+                </NavLink>
               </div>
             </div>
           </header>
@@ -33,19 +36,14 @@ const Home = () => {
 
       <div className="section-2">
         <div className="h2 recent-blog-heading">Recent blogs</div>
-          <div className="container">
-                <div className="card">
-                  <div className="card-body">
-                    <div>Title</div>
-                  </div>
-
-                </div>
+        <div className="container">
+          <div className="card">
+            <div className="card-body">
+              <div>Title</div>
+            </div>
           </div>
-
+        </div>
       </div>
-
-
-      
     </div>
   );
 };
