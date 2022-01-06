@@ -1,8 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
-import Signup from "./components/signup";
 import AddBlog from ".//Blog/addBlog";
-import ListBlog from "./components/listBlogs";
 import { useState } from "react";
 import { createTheme } from "@mui/system";
 import { BlogProvider } from "./components/context";
@@ -10,6 +8,8 @@ import ViewBlog from "./components/View Blog/viewBlog";
 import Header from "./components/Header/header";
 import Login from "./components/Login/login";
 import Home from "./components/Home/home";
+import Signup from "./components/Signup/signup";
+import ListBlog from "./components/List Blog/listBlogs";
 
 function App() {
   const [darkMode, setdarkMode] = useState(false);

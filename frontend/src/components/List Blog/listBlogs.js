@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import appConfig from "../config";
+import appConfig from "../../config";
 
 const ListBlog = () => {
   const url = appConfig.api_url;
