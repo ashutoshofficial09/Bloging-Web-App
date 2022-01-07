@@ -1,32 +1,32 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
-.body{
-    background:linear-gradient(rgba(34,34,34,.6),rgba(34,34,34,.6)),url(https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
-    background-size: cover;
+.body {
+  background: linear-gradient(rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.6)),
+    url(https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+  background-size: cover;
 }
-.signup-container{
-    display: flex;
-    height: 576px;
-    align-items: center;
-    justify-content: center;
+.signup-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
-.my-card{
-    background-color: rgba(255, 255, 255, 0.686);
-    padding:20px 40px;
-    border-radius: 2%;
-    box-shadow: 0 20px 28px rgba(0,0,0,0.45);
-  box-shadow: 0 20px 28px rgba(0,0,0,0.57);
-  box-shadow: 0 20px 28px rgba(0,0,0,0.45);
+.my-card {
+  background-color: rgba(255, 255, 255, 0.686);
+  padding: 20px 40px;
+  border-radius: 2%;
+  box-shadow: 0 20px 28px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 20px 28px rgba(0, 0, 0, 0.57);
+  box-shadow: 0 20px 28px rgba(0, 0, 0, 0.45);
   position: relative;
 }
-.back-btn{
-    position: absolute;
-    top: 10px;
-    bottom: 0;
-    right: 0;
+.back-btn {
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  right: 0;
 }
-

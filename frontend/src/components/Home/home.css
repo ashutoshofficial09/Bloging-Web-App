@@ -32,3 +32,6 @@
   display: flex;
   justify-content: center;
 }
+.homeBlog-Card {
+  background-color: #e9ecef;
+}

@@ -55,6 +55,11 @@ const ViewBlog = () => {
           <Container className="mt-5 ">
             <Card>
               <CardHeader
+                style={{
+                  fontWeight: "700",
+                  fontSize: "86px",
+                  color: "#212529",
+                }}
                 title={blogDetail.title}
                 subheader={blogDetail.tags}
               />

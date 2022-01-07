@@ -32,7 +32,6 @@ const Home = () => {
     if (!loading) {
       return (
         <Grid container spacing={5}>
-          0
           {blogData.map((blog) => (
             <Grid item md={3}>
               <Card>
@@ -150,7 +149,7 @@ const Home = () => {
 
           <div class="col-md-4 mt-5">
             <div class="mycard">
-              <div className="feature-icon bg-primary">
+              <div className="feature-icon ">
                 <lord-icon
                   src="https://cdn.lordicon.com/qhgmphtg.json"
                   trigger="loop"
@@ -172,7 +171,7 @@ const Home = () => {
       <section className="container section-2 mt-5">
         <div className="h3 mb-4 recent-blog-heading">Recent blogs</div>
         <div className="container">
-          <div className="card">
+          <div className="card homeBlog-Card">
             <div className="card-body">
               <div>{displayBlog()}</div>
             </div>
