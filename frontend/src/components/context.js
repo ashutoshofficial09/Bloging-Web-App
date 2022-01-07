@@ -1,11 +1,11 @@
 import { createContext, useState } from "react";
 
-
 export const BlogContext = createContext();
 
 export const BlogProvider = (props) => {
   const getUser = () => {
     let user = sessionStorage.getItem("user");
+    console.log(user);
     if (user) {
       return true;
     } else {

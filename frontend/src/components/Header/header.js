@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 import { BlogContext } from "../context";
 import "./header.css";
 import "../logoo.png";
-const Header = () => {
-  const { loggedin, setLoggedin, currentUser } = useContext(BlogContext);
+const Header = ({ loggedin, setLoggedin, currentUser }) => {
+  // const { loggedin, setLoggedin, currentUser } = useContext(BlogContext);
 
   useEffect(() => {
     console.log(loggedin);
@@ -72,6 +72,7 @@ const Header = () => {
               alt="logo"
             />
           </NavLink>
+          <button onClick={(e) => console.log(loggedin)}>show</button>
 
           <button
             className="navbar-toggler"

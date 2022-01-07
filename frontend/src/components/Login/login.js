@@ -8,10 +8,10 @@ import appConfig from "../../config";
 import { BlogContext } from "../context";
 
 import "./login.css";
-const Login = () => {
+const Login = ({ setLoggedin, setCurrentUser, loggedin }) => {
   const url = appConfig.api_url;
 
-  const { setLoggedin, setCurrentUser } = useContext(BlogContext);
+  // const { setLoggedin, setCurrentUser, loggedin } = useContext(BlogContext);
 
   const loginForm = {
     email: "",
@@ -33,14 +33,14 @@ const Login = () => {
     fetch(url + "/user/check-login", reqOpt)
       .then((res) => {
         console.log(res.status);
-        if (res.status == 200) {
+        if (res.status === 200) {
           setLoggedin(true);
           Swal.fire({
             icon: "success",
             title: "Success",
             text: "You have Loged in succcesfully",
           });
-        } else if (res.status == 300) {
+        } else if (res.status === 300) {
           Swal.fire({
             icon: "error",
             title: "Failed",
@@ -52,7 +52,8 @@ const Login = () => {
       .then((data) => {
         sessionStorage.setItem("user", JSON.stringify(data));
         setCurrentUser(data);
-        console.log(data);
+        setLoggedin(true);
+        console.log(loggedin);
       });
   };
 
