@@ -12,6 +12,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import appConfig from "../../config";
+import "./listBlog.css";
 
 const ListBlog = () => {
   const url = appConfig.api_url;
@@ -55,19 +56,6 @@ const ListBlog = () => {
                     >
                       View Full Blog
                     </Link>
-                    <Link
-                      onClick={() => {
-                        {
-                        }
-                      }}
-                      className="ml-auto"
-                      to={"/delete/"}
-                      component={IconButton}
-                    >
-                      <IconButton>
-                        <DeleteOutline />
-                      </IconButton>
-                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -84,77 +72,81 @@ const ListBlog = () => {
   }, []);
 
   return (
-    <Paper className="mb-5">
-      <Container maxWidth="xl">
-        <header style={{ height: "30rem", marginBottom: "5rem" }}>
-          <div
-            id="carouselExampleIndicators"
-            class="carousel slide"
-            data-ride="carousel"
-          >
-            <ol class="carousel-indicators">
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="0"
-                class="active"
-              ></li>
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="1"
-              ></li>
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="2"
-              ></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="carousel-item">
-                  <img
-                    className="d-block w-100 height-100vh"
-                    src="https://images.unsplash.com/photo-1587502537147-2ba64a62e3d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1896&q=80"
-                    alt="Second slide"
-                  />
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img
-                  className="d-block w-100"
-                  src="https://images.unsplash.com/photo-1587502537147-2ba64a62e3d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1896&q=80"
-                  alt="Second slide"
-                />
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide" />
+    <div className="listBlog-bg">
+      <header
+        style={{
+          height: "20rem",
+          marginBottom: "10rem",
+        }}
+      >
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide listBlog-header"
+          data-ride="carousel"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <CardMedia
+                className="d-block w-100 opacity-50"
+                component="img"
+                image="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                height="400vh"
+                alt="First slide"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Blogs are amazing</h5>
+                <p>Technological blogs</p>
               </div>
             </div>
-            <a
-              class="carousel-control-prev"
-              href="#carouselExampleIndicators"
-              role="button"
-              data-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a
-              class="carousel-control-next"
-              href="#carouselExampleIndicators"
-              role="button"
-              data-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="sr-only">Next</span>
-            </a>
+            <div class="carousel-item">
+              <CardMedia
+                className="d-block w-100"
+                component="img"
+                image="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+                height="400vh"
+                alt="Second slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <CardMedia
+                className="d-block w-100"
+                component="img"
+                image="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+                height="400vh"
+                alt="Third slide"
+              />
+            </div>
           </div>
-        </header>
-
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </header>
+      <Container maxWidth="xl">
         <Grid container justifyContent="space-between" className="mb-3">
           <Grid item>
             <h3 classNameName="subtitle">All Blogs</h3>
@@ -162,7 +154,7 @@ const ListBlog = () => {
         </Grid>
         {displayBlog()}
       </Container>
-    </Paper>
+    </div>
   );
 };
 

@@ -60,8 +60,8 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <div className="header-bg">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/home">
             <img

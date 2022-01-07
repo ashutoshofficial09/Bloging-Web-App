@@ -10,6 +10,7 @@ import Login from "./components/Login/login";
 import Home from "./components/Home/home";
 import Signup from "./components/Signup/signup";
 import ListBlog from "./components/List Blog/listBlogs";
+import Footer from "./components/Footer/footer";
 
 function App() {
   const [darkMode, setdarkMode] = useState(false);
@@ -41,6 +42,7 @@ function App() {
           <Route exact path={"/"}>
             <Redirect to="/home" />
           </Route>
+          <Footer />
         </BrowserRouter>
       </BlogProvider>
     </div>

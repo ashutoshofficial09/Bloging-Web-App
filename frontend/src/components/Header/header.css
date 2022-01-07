@@ -1,5 +1,17 @@
-.my-nav{
-    display: flex;
-    justify-content: space-between;
-    margin-right: 50px;
+.my-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 50px;
+}
+.header-bg {
+  background-color: #212529;
+  color: #fff;
+}
+.nav-link:link,
+.nav-link:visited {
+  color: #f1f3f5;
+}
+.nav-link:hover,
+.nav-link:active {
+  color: #ffffff;
 }
