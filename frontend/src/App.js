@@ -69,7 +69,7 @@ function App() {
           <Route path={"/addBlog"} component={AddBlog} />
           <Route path={"/listBlog"} component={ListBlog} />
           <Route path={"/view/:id"} component={ViewBlog} />
-          <Route path={"/manageBlogs"} component={ManageBlogs}
+          <Route path={"/manageBlogs"} component={ManageBlogs} />
           <Route exact path={"/"}>
             <Redirect to="/home" />
           </Route>

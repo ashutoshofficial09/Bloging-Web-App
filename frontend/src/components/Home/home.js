@@ -92,7 +92,7 @@ const Home = () => {
               </div>
               <div>
                 <NavLink className="link" to="/signup">
-                  <button className="btn btn-success">
+                  <button className="btn btn-primary">
                     Let's Start Blogging
                   </button>
                 </NavLink>
@@ -103,8 +103,8 @@ const Home = () => {
       </div>
 
       <section className="features container">
-        <div>
-          <h2 className="h2">Our features </h2>
+        <div className="features-head text-center">
+          <h2 className="h2 features-h2">Our features </h2>
           <p>
             This platform is about sharing latest tech blogs.Here anyone can
             create and read blogs about latest technologies of the world{" "}

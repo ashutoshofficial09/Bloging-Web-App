@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import appConfig from "../../config";
 
-import UpdateForm from "./updateform";
+import UpdateForm from "../updateform";
 
 const ManageBlogs = () => {
   const url = appConfig.api_url;
@@ -26,7 +26,7 @@ const ManageBlogs = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setUsersList(data);
+        // setUsersList(data);
         setLoading(false);
       });
   };
@@ -51,14 +51,14 @@ const ManageBlogs = () => {
   };
 
   const updateUser = (user) => {
-    setShowUpdateForm(true);
+    //  setShowUpdateForm(true);
     setUpdateFormData(user);
   };
 
   //   for displaying users list inside table
   const showUsers = () => {
     if (!loading) {
-      return usersList.map((user, index) => (
+      return blogList.map((user, index) => (
         <tr key={index}>
           <td>{user.username}</td>
           <td>{user.email}</td>
@@ -66,7 +66,7 @@ const ManageBlogs = () => {
           <td>
             <Button
               onClick={() => {
-                deleteUser(user._id);
+                deleteBlog(user._id);
               }}
               variant="contained"
               color="error"
@@ -134,7 +134,7 @@ const ManageBlogs = () => {
         <tbody>{showUsers()}</tbody>
       </table>
       <div className="mt-5">
-        {showUpdateForm ? (
+        {showUpdateBlog ? (
           <UpdateForm
             updateFormData={updateFormData}
             fetchUsersData={fetchUsersData}
