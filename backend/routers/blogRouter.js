@@ -54,4 +54,15 @@ router.get("/getbyid/:author", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.delete("/delete/:userid", (req, res) => {
+  Model.findByIdAndDelete(req.params.userid)
+    .then((data) => {
+      res.status(200).json({ message: "deleted successfully!" });
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
