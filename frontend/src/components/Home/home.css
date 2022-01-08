@@ -5,6 +5,7 @@
 }
 .home {
   background-color: #ced4da;
+  background: url("https://images.unsplash.com/photo-1487147264018-f937fba0c817?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
 }
 .section-1 {
   background-image: linear-gradient(
@@ -33,5 +34,11 @@
   justify-content: center;
 }
 .homeBlog-Card {
+  background-color: #e9ecef;
+}
+.btn-link {
+  color: #fff;
+}
+.mycard:hover {
   background-color: #e9ecef;
 }

@@ -44,14 +44,16 @@ const Home = () => {
                   <h4>{blog.title}</h4>
                   <p>{blog.description}</p>
                   <div className="d-flex justify-content-between">
-                    <Link
-                      to={"/View/" + blog._id}
-                      component={Button}
-                      variant="contained"
-                      color="primary"
-                    >
-                      View Full Blog
-                    </Link>
+                    <Button variant="contained">
+                      <Link
+                        to={"/view/" + blog._id}
+                        variant="contained"
+                        underline="none"
+                        color="inherit"
+                      >
+                        View Full Blog
+                      </Link>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -110,7 +112,7 @@ const Home = () => {
         </div>
         <div className="features-card row">
           <div class="col-md-4 mt-5">
-            <div class=" mycard">
+            <div class="mycard">
               <div className="feature-icon">
                 <lord-icon
                   src="https://cdn.lordicon.com/jvucoldz.json"
@@ -129,7 +131,7 @@ const Home = () => {
           </div>
 
           <div class="col-md-4 mt-5">
-            <div class="card mycard">
+            <div class="mycard mycard-active">
               <div className="feature-icon">
                 <lord-icon
                   src="https://cdn.lordicon.com/wloilxuq.json"

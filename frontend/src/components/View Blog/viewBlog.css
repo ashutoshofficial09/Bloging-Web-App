@@ -4,3 +4,10 @@
   align-items: center;
   padding: 20vh;
 }
+
+@media only screen and (max-device-width: 480px) {
+  .viewBlog-container {
+    padding: 0;
+    padding-bottom: 2vh;
+  }
+}

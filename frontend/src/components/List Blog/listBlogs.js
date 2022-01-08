@@ -52,7 +52,7 @@ const ListBlog = () => {
                       to={"/view/" + blog._id}
                       component={Button}
                       variant="contained"
-                      color="primary"
+                      color="inherit"
                     >
                       View Full Blog
                     </Link>

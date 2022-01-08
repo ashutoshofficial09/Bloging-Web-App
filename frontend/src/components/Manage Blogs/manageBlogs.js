@@ -1,20 +1,21 @@
 import { Alert, Button, Snackbar } from "@mui/material";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import appConfig from "../config";
+import appConfig from "../../config";
+
 import UpdateForm from "./updateform";
 
 const ManageBlogs = () => {
   const url = appConfig.api_url;
 
-  const [usersList, setUsersList] = useState([]);
+  const [blogList, setBlogList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // to control snakbar
   const [snakbarOpen, setSnakbarOpen] = useState(false);
 
   // to control updateForm
-  const [showUpdateForm, setShowUpdateForm] = useState(false);
+  const [showUpdateBlog, setShowUpdateBlog] = useState(false);
 
   // to store formdata to update
   const [updateFormData, setUpdateFormData] = useState({});

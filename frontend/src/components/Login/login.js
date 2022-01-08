@@ -54,6 +54,9 @@ const Login = ({ setLoggedin, setCurrentUser, loggedin }) => {
         setCurrentUser(data);
         setLoggedin(true);
         console.log(loggedin);
+      })
+      .then(() => {
+        window.location.replace("/addBlog");
       });
   };
 
