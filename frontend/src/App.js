@@ -11,6 +11,7 @@ import Home from "./components/Home/home";
 import Signup from "./components/Signup/signup";
 import ListBlog from "./components/List Blog/listBlogs";
 import Footer from "./components/Footer/footer";
+import ManageBlogs from "./components/Manage Blogs/manageBlogs";
 
 function App() {
   const getUser = () => {
@@ -68,6 +69,7 @@ function App() {
           <Route path={"/addBlog"} component={AddBlog} />
           <Route path={"/listBlog"} component={ListBlog} />
           <Route path={"/view/:id"} component={ViewBlog} />
+          <Route path={"/manageBlogs"} component={ManageBlogs}
           <Route exact path={"/"}>
             <Redirect to="/home" />
           </Route>
