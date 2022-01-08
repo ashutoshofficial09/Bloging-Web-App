@@ -8,10 +8,10 @@ import appConfig from "../../config";
 import { BlogContext } from "../context";
 
 import "./login.css";
-const Login = ({ setLoggedin, setCurrentUser, loggedin }) => {
+const Login = (props) => {
   const url = appConfig.api_url;
 
-  // const { setLoggedin, setCurrentUser, loggedin } = useContext(BlogContext);
+  const { setLoggedin, setCurrentUser, loggedin } = useContext(BlogContext);
 
   const loginForm = {
     email: "",
@@ -56,7 +56,7 @@ const Login = ({ setLoggedin, setCurrentUser, loggedin }) => {
         console.log(loggedin);
       })
       .then(() => {
-        window.location.replace("/addBlog");
+        // window.location.replace("/addBlog");
       });
   };
 

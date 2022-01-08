@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import AddBlog from ".//Blog/addBlog";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createTheme } from "@mui/system";
 import { BlogProvider } from "./components/context";
 import ViewBlog from "./components/View Blog/viewBlog";
@@ -16,26 +16,30 @@ import ManageBlogs from "./components/Manage Blogs/manageBlogs";
 function App() {
   const getUser = () => {
     let user = sessionStorage.getItem("user");
-    console.log(user);
     if (user) {
+      console.log(true);
       return true;
     } else {
       return false;
     }
   };
 
-  const getCurrentUser = () => {
-    let user = sessionStorage.getItem("user");
-    if (user) {
-      return JSON.parse(user);
-    } else {
-      return {};
-    }
-  };
-
   const [darkMode, setdarkMode] = useState(false);
-  const [currentUser, setCurrentUser] = useState(getCurrentUser());
-  const [loggedin, setLoggedin] = useState(getUser());
+  const [currentUser, setCurrentUser] = useState({});
+  const [loggedin, setLoggedin] = useState(true);
+
+  useEffect(() => {
+    console.log("dsds");
+    setCurrentUser(() => {
+      let user = sessionStorage.getItem("user");
+      if (user) {
+        return JSON.parse(user);
+      } else {
+        return {};
+      }
+    });
+    setLoggedin(getUser());
+  }, []);
 
   const myTheme = createTheme({
     palette: {
@@ -54,7 +58,7 @@ function App() {
     <div>
       <BlogProvider>
         <BrowserRouter>
-          <Header loggedin={loggedin} />
+          <Header loggedin={loggedin} setLoggedin={setLoggedin} />
           <Route path={"/home"} component={Home} />
           <Route path={"/signup"} component={Signup} />
 
