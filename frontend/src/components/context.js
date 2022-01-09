@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createContext, useState } from "react";
 
 export const BlogContext = createContext();
@@ -14,12 +15,17 @@ export const BlogProvider = (props) => {
 
   const getCurrentUser = () => {
     let user = sessionStorage.getItem("user");
+    console.log(user);
     if (user) {
       return JSON.parse(user);
     } else {
       return {};
     }
   };
+
+  useEffect(() => {
+    
+  }, [])
 
   const [currentUser, setCurrentUser] = useState(getCurrentUser());
   const [loggedin, setLoggedin] = useState(getUser());

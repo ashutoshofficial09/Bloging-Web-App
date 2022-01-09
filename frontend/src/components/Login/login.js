@@ -1,6 +1,7 @@
 import { Close, EmailRounded, Lock } from "@mui/icons-material";
 import { Button, InputAdornment, TextField } from "@mui/material";
 import { Formik } from "formik";
+import { useEffect } from "react";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -11,15 +12,21 @@ import "./login.css";
 const Login = (props) => {
   const url = appConfig.api_url;
 
-  const { setLoggedin, setCurrentUser, loggedin } = useContext(BlogContext);
+  const { setLoggedin, setCurrentUser, loggedin, currentUser } =
+    useContext(BlogContext);
 
   const loginForm = {
     email: "",
     password: "",
   };
 
+  useEffect(() => {
+    console.log(JSON.parse(sessionStorage.getItem("user")));
+  }, []);
+
   const loginSubmit = (formdata) => {
     console.log(formdata);
+
     //three things are required to 1.request address  2.httprequestethod 3.data and its format
 
     const reqOpt = {
@@ -33,20 +40,7 @@ const Login = (props) => {
     fetch(url + "/user/check-login", reqOpt)
       .then((res) => {
         console.log(res.status);
-        if (res.status === 200) {
-          setLoggedin(true);
-          Swal.fire({
-            icon: "success",
-            title: "Success",
-            text: "You have Loged in succcesfully",
-          });
-        } else if (res.status === 300) {
-          Swal.fire({
-            icon: "error",
-            title: "Failed",
-            text: "Email or Password is incorrect!",
-          });
-        }
+
         return res.json();
       })
       .then((data) => {
