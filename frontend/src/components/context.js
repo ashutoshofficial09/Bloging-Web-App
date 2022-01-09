@@ -5,7 +5,7 @@ export const BlogContext = createContext();
 
 export const BlogProvider = (props) => {
   const getUser = () => {
-    let user = sessionStorage.getItem("user");
+    let user = sessionStorage.getItem("user"); 
     if (user) {
       return true;
     } else {
