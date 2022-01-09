@@ -65,4 +65,14 @@ router.delete("/delete/:userid", (req, res) => {
     });
 });
 
+router.get("/getbyauthor/:id", (req, res) => {
+  Model.find({ author: req.params.id })
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;

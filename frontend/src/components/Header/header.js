@@ -35,6 +35,13 @@ const Header = (props) => {
               </NavLink>
             </Button>
           </li>
+          <li className="nav-item">
+            <Button>
+              <NavLink className="nav-link" to="/manageBlogs">
+                Manage Blog
+              </NavLink>
+            </Button>
+          </li>
         </>
       );
     } else {
@@ -83,7 +90,7 @@ const Header = (props) => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon "></span>
           </button>
           <div
             className="collapse navbar-collapse my-nav"
