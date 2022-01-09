@@ -11,3 +11,9 @@
     padding-bottom: 2vh;
   }
 }
+@media only screen and (max-device-width: 600px) {
+  .viewBlog-container {
+    padding: 0;
+    padding-bottom: 5vh;
+  }
+}

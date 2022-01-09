@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import PersonOutlineTwoToneIcon from '@mui/icons-material/PersonOutlineTwoTone';
+import { Link, NavLink } from "react-router-dom";
 import { BlogContext } from "../context";
 import "./header.css";
 import "../logoo.png";
@@ -12,22 +13,15 @@ const Header = (props) => {
     console.log(currentUser);
   }, []);
 
-  const logout = () => {
-    setLoggedin(false);
-    sessionStorage.removeItem("user");
-  };
+  // const logout = () => {
+  //   setLoggedin(false);
+  //   sessionStorage.removeItem("user");
+  // };
 
   const displayLoggedin = () => {
     if (loggedin) {
       return (
         <>
-          <li className="nav-item">
-            <Button onClick={logout()}>
-              <NavLink className="nav-link" to="/#">
-                Log out
-              </NavLink>
-            </Button>
-          </li>
           <li className="nav-item">
             <Button>
               <NavLink className="nav-link" to="/addBlog">
@@ -40,6 +34,20 @@ const Header = (props) => {
               <NavLink className="nav-link" to="/manageBlogs">
                 Manage Blog
               </NavLink>
+            </Button>
+          </li>
+          <li className="nav-item">
+            <Button>
+              <NavLink className="nav-link" to="/#">
+                Log out
+              </NavLink>
+            </Button>
+          </li>
+          <li className="nav-item">
+            <Button>
+              <Link className="nav-link" to="/user">
+                <PersonOutlineTwoToneIcon/>
+              </Link>
             </Button>
           </li>
         </>
@@ -79,7 +87,6 @@ const Header = (props) => {
               alt="logo"
             />
           </NavLink>
-          <button onClick={(e) => console.log(loggedin)}>show</button>
 
           <button
             className="navbar-toggler"
@@ -98,28 +105,16 @@ const Header = (props) => {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink
+                <Button>
+                <Link
                   className="nav-link active"
                   aria-current="page"
                   to="/home"
                 >
                   Home
-                </NavLink>
+                </Link>
+                </Button>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Pricing
-                </a>
-              </li>
-            </ul>
-            <ul className="navbar-nav">
-              {displayLoggedin()}
-
               <li className="nav-item">
                 <Button>
                   <NavLink className="nav-link" to="/listBlog">
@@ -127,6 +122,17 @@ const Header = (props) => {
                   </NavLink>
                 </Button>
               </li>
+              <li className="nav-item">
+                <Button>
+                <Link className="nav-link" href="#">
+                  Pricing
+                </Link></Button>
+              </li>
+            </ul>
+            <ul className="navbar-nav">
+              
+
+              {displayLoggedin()}
             </ul>
           </div>
         </div>

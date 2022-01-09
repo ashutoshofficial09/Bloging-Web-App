@@ -1,0 +1,18 @@
+.user-page {
+  background-color: #ced4da;
+  height: 100vh;
+}
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  background-color: blueviolet;
+}
+.profile-card {
+  margin-top: -20vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
