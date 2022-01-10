@@ -1,6 +1,31 @@
-import { TextField, Button, CardMedia } from "@mui/material";
+import {
+  TextField,
+  Button,
+  CardMedia,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+  FormLabel,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+  Input,
+} from "@mui/material";
+import { useState } from "react";
 import "./user.css";
 const User = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="user-page">
       <div className="profile-header"></div>
@@ -62,9 +87,83 @@ const User = () => {
                 variant="standard"
               />
               <br />
-              <Button className="w-50 mb-3" variant="outlined">
+              <Button
+                className="w-50 mb-3"
+                variant="outlined"
+                onClick={handleClickOpen}
+              >
                 Edit Profile
               </Button>
+
+              <Dialog open={open} onClose={handleClose}>
+                <DialogTitle>Profile</DialogTitle>
+                <DialogContent>
+                  <DialogContentText>Update your Profile</DialogContentText>
+                  <Input id="profilePicture" variant="standard" type="file" />
+                  <br />
+                  <TextField
+                    className="mb-2"
+                    margin="dense"
+                    id="name"
+                    label="Name"
+                    type="userName"
+                    variant="standard"
+                  />
+                  <br />
+
+                  <FormLabel component="legend">Gender</FormLabel>
+                  <RadioGroup
+                    row
+                    label="Gender"
+                    aria-label="gender"
+                    defaultValue="male"
+                    name="radio-buttons-group"
+                  >
+                    <FormControlLabel
+                      value="female"
+                      control={<Radio />}
+                      label="Female"
+                    />
+                    <FormControlLabel
+                      value="male"
+                      control={<Radio />}
+                      label="Male"
+                    />
+                    <FormControlLabel
+                      value="other"
+                      control={<Radio />}
+                      label="Other"
+                    />
+                  </RadioGroup>
+
+                  <TextField
+                    className="md-2"
+                    margin="dense"
+                    id="name"
+                    label="Email Address"
+                    type="email"
+                    variant="standard"
+                  />
+                  <br />
+                  <TextField
+                    id="input"
+                    label="Address"
+                    multiline
+                    type="address"
+                    className="md-2"
+                    defaultValue=""
+                    variant="standard"
+                  />
+                </DialogContent>
+                <DialogActions>
+                  <Button variant="outlined" onClick={handleClose}>
+                    Cancel
+                  </Button>
+                  <Button variant="outlined" onClick={handleClose}>
+                    Update
+                  </Button>
+                </DialogActions>
+              </Dialog>
             </div>
           </div>
         </div>
