@@ -115,39 +115,6 @@ const Home = () => {
         </div>
       </header>
 
-      {/* <!-- Page section example for content below the video header --> */}
-
-      {/* <div className="section-1">
-        <div className="container">
-          <header className="row align-items-center justify-comtent-start header">
-            <div className="col-md-12">
-              <h2 className="sub-heading">Hello! welcome to</h2>
-              <h1 className="mb-4 mb-md-0">
-                <strong> Let's Blog</strong>{" "}
-              </h1>
-              <div className="row">
-                <div className="col-md-7">
-                  <div className="text">
-                    <p>
-                      Clean, simple and elegant, The Let's blog is suitable for
-                      any kind of blog, personal, travel, fashion, food,
-                      photography, publishing or tutorial blog site
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <NavLink className="link" to="/signup">
-                  <button className="btn btn-primary">
-                    Let's Start Blogging
-                  </button>
-                </NavLink>
-              </div>
-            </div>
-          </header>
-        </div>
-      </div> */}
-
       <section className="features container mt-4">
         <div className="features-head text-center">
           <h2 className="h2 features-h2">Our features </h2>
@@ -163,7 +130,7 @@ const Home = () => {
                 <lord-icon
                   src="https://cdn.lordicon.com/jvucoldz.json"
                   trigger="loop"
-                  colors="primary:#7166ee,secondary:#08a88a"
+                  colors="primary:#121331,secondary:#1c7ed6"
                   style={{ width: "150px", height: "150px" }}
                 ></lord-icon>
               </div>
@@ -182,7 +149,7 @@ const Home = () => {
                 <lord-icon
                   src="https://cdn.lordicon.com/wloilxuq.json"
                   trigger="loop"
-                  colors="primary:#121331,secondary:#08a88a"
+                  colors="primary:#121331,secondary:#1c7ed6"
                   style={{ width: "150px", height: "150px" }}
                 ></lord-icon>
               </div>
@@ -201,7 +168,7 @@ const Home = () => {
                 <lord-icon
                   src="https://cdn.lordicon.com/qhgmphtg.json"
                   trigger="loop"
-                  colors="primary:#121331,secondary:#08a88a"
+                  colors="primary:#121331,secondary:#1c7ed6"
                   style={{ width: "150px", height: "150px" }}
                 ></lord-icon>
               </div>
