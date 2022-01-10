@@ -159,7 +159,7 @@ const User = () => {
                   <Button variant="outlined" onClick={handleClose}>
                     Cancel
                   </Button>
-                  <Button variant="outlined" onClick={handleClose}>
+                  <Button variant="contained" onClick={handleClose}>
                     Update
                   </Button>
                 </DialogActions>

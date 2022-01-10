@@ -48,9 +48,14 @@ const Login = (props) => {
         setCurrentUser(data);
         setLoggedin(true);
         console.log(loggedin);
-      })
-      .then(() => {
-        // window.location.replace("/addBlog");
+
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "You have registered succcesfully",
+        }).then(() => {
+          window.location.replace("/addBlog");
+        });
       });
   };
 

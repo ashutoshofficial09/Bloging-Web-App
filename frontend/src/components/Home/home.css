@@ -6,7 +6,8 @@
 }
 .home {
   background-color: #ced4da;
-  background: url("https://images.unsplash.com/photo-1487147264018-f937fba0c817?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80");
+  background: url("https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
+  color: #f1f3f5;
 }
 .section-1 {
   background-image: linear-gradient(
@@ -45,7 +46,7 @@
   box-shadow: 0 0 2px 0 rgb(70, 91, 92);
 }
 .mycard:hover {
-  background-color: #e9ecef;
+  background-color: #343a40;
   box-shadow: 0 0 24px rgb(70, 91, 92);
 }
 .features-head {
@@ -56,4 +57,27 @@
 .features-h2 {
   font-size: 48px;
   font-weight: 600;
+}
+header {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }

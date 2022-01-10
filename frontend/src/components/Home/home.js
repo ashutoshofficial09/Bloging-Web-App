@@ -71,7 +71,37 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div className="section-1">
+      <header>
+        {/* <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS --> */}
+        <div class="overlay"></div>
+
+        {/* <!-- The HTML5 video element that will create the background video on the header --> */}
+        <video
+          playsinline="playsinline"
+          autoplay="autoplay"
+          muted="muted"
+          loop="loop"
+        >
+          <source
+            src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* <!-- The header content --> */}
+        <div class="container h-100">
+          <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+              <h1 class="display-3">Video Header</h1>
+              <p class="lead mb-0">Using HTML5 Video and Bootstrap</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* <!-- Page section example for content below the video header --> */}
+
+      {/* <div className="section-1">
         <div className="container">
           <header className="row align-items-center justify-comtent-start header">
             <div className="col-md-12">
@@ -100,9 +130,9 @@ const Home = () => {
             </div>
           </header>
         </div>
-      </div>
+      </div> */}
 
-      <section className="features container">
+      <section className="features container mt-4">
         <div className="features-head text-center">
           <h2 className="h2 features-h2">Our features </h2>
           <p>
@@ -122,10 +152,10 @@ const Home = () => {
                 ></lord-icon>
               </div>
               <div class="card-body">
-                <h3>Latest Technology</h3>
-                <p class="text-muted">Create your blog easily</p>
-                <p className="text-muted">Post your blog</p>
-                <p className="text-muted">Serve</p>
+                <h3 className="text-center">Updated Blogs</h3>
+                <p className="text-center">Read blogs</p>
+                <p className="text-center">Update your knowledge</p>
+                <p className="text-center">And many more </p>
               </div>
             </div>
           </div>
@@ -141,10 +171,10 @@ const Home = () => {
                 ></lord-icon>
               </div>
               <div class="card-body">
-                <h3>Latest Technology</h3>
-                <p class="text-muted">Create your blog easily</p>
-                <p className="text-muted">Post your blog</p>
-                <p className="text-muted">Serve</p>
+                <h3 className="text-center">Latest Technology</h3>
+                <p class="text-center">Create your blog easily</p>
+                <p className="text-center">Post your blog</p>
+                <p className="text-center">Serve</p>
               </div>
             </div>
           </div>
@@ -160,10 +190,10 @@ const Home = () => {
                 ></lord-icon>
               </div>
               <div class="card-body">
-                <h3>Latest Technology</h3>
-                <p class="text-muted">Create your blog easily</p>
-                <p className="text-muted">Post your blog</p>
-                <p className="text-muted">Serve</p>
+                <h3 className="text-center">Latest Technology</h3>
+                <p class="text-center">Create your blog easily</p>
+                <p className="text-center">Post your blog</p>
+                <p className="text-center">Serve</p>
               </div>
             </div>
           </div>

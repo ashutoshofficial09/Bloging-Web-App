@@ -1,17 +1,19 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
-.blog-header{
-    background-color: rgb(73, 76, 97);
-    height:300px;
+.blog-header {
+  background: url("https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
+  /* background-color: rgb(73, 76, 97); */
+  height: 50vh;
 }
-.blog-body{
-    background: url('');
-    background-color: white;
+.blog-body {
+  background: url("");
+  background-color: #ced4da;
 }
-.post-card{
-    margin-top: -60px;
+.post-card {
+  margin-top: -25vh;
+  background-color: #f1f3f5;
 }

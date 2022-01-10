@@ -77,10 +77,10 @@ const AddBlog = () => {
     <div>
       <div className="blog-body">
         <div className="blog-header"></div>
-        <div className="container">
-          <div className="card post-card">
+        <div className="container pb-5">
+          <div className="card post-card pb-3">
             <div className="card-body">
-              <h4 className="text-center mt-2 mb-4">Add New Blog</h4>
+              <h4 className="text-center mt-2 mb-4 bold h2">Create New Blog</h4>
               <div className="back-btn">
                 <Button>
                   <NavLink to="/home">
@@ -106,7 +106,7 @@ const AddBlog = () => {
                       id="description"
                       label="Description"
                       multiline
-                      rows={4}
+                      rows={2}
                       onChange={handleChange}
                       value={values.description}
                     />
@@ -135,7 +135,7 @@ const AddBlog = () => {
 
                       <MDEditor value={blogData} onChange={setBlogData} />
                       <Button
-                        className="mt-2 w-100"
+                        className="mt-4 w-100"
                         type="submit"
                         variant="contained"
                       >
