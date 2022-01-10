@@ -83,7 +83,8 @@ const Home = () => {
           loop="loop"
         >
           <source
-            src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
+            src="https://player.vimeo.com/external/497754241.sd.mp4?s=ff5d6d8d95b8b1a46c3ec5e312480cab6cf65518&profile_id=164"
+            // src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
             type="video/mp4"
           />
         </video>
@@ -92,8 +93,23 @@ const Home = () => {
         <div class="container h-100">
           <div class="d-flex h-100 text-center align-items-center">
             <div class="w-100 text-white">
-              <h1 class="display-3">Video Header</h1>
-              <p class="lead mb-0">Using HTML5 Video and Bootstrap</p>
+              <h1 class="display-3">Hello! Welcome to </h1>
+              <h1 className="mb-4 mb-md-0">
+                <strong> Tech Blog</strong>{" "}
+              </h1>
+              <NavLink to="/signup">
+                <Button
+                  variant="contained"
+                  sx={{
+                    ":hover": {
+                      color: "white",
+                    },
+                  }}
+                  className="btn lead mt-3 mb-0"
+                >
+                  Let's Start Blogging
+                </Button>
+              </NavLink>
             </div>
           </div>
         </div>
