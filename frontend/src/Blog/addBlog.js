@@ -69,6 +69,8 @@ const AddBlog = () => {
           icon: "success",
           title: "Success",
           text: "Blog posted successfully",
+        }).then(() => {
+          window.location.replace("/listBlog");
         });
       });
   };
