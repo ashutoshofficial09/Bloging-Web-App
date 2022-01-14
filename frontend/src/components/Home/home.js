@@ -99,6 +99,7 @@ const Home = () => {
               </h1>
               <NavLink to="/signup">
                 <Button
+                  underline="none "
                   variant="contained"
                   sx={{
                     ":hover": {

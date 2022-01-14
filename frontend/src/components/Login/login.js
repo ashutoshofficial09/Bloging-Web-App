@@ -37,26 +37,52 @@ const Login = (props) => {
       },
     };
 
-    fetch(url + "/user/check-login", reqOpt)
-      .then((res) => {
-        console.log(res.status);
-
-        return res.json();
-      })
-      .then((data) => {
-        sessionStorage.setItem("user", JSON.stringify(data));
-        setCurrentUser(data);
-        setLoggedin(true);
-        console.log(loggedin);
-
+    fetch(url + "/user/check-login", reqOpt).then((res) => {
+      if (res.status == 200) {
+        console.log("login success");
+        res.json().then((data) => {
+          sessionStorage.setItem("user", JSON.stringify(data));
+          setCurrentUser(data);
+          setLoggedin(true);
+        });
+        // toast.success("Loggedin Successfully");
         Swal.fire({
           icon: "success",
           title: "Success",
-          text: "You have registered succcesfully",
+          text: "login success",
         }).then(() => {
           window.location.replace("/addBlog");
         });
-      });
+      } else if (res.status == 300) {
+        console.log("login failed");
+        // toast.error("Loggin Failed");
+        Swal.fire({
+          icon: "error",
+          title: "Failed",
+          text: "login failed",
+        });
+      }
+    });
+    // fetch(url + "/user/check-login", reqOpt)
+    //   .then((res) => {
+    //     console.log(res.status);
+
+    //     return res.json();
+    //   })
+    //   .then((data) => {
+    //     sessionStorage.setItem("user", JSON.stringify(data));
+    //     setCurrentUser(data);
+    //     setLoggedin(true);
+    //     console.log(loggedin);
+
+    //     Swal.fire({
+    //       icon: "success",
+    //       title: "Success",
+    //       text: "You have registered succcesfully",
+    //     }).then(() => {
+    //       window.location.replace("/addBlog");
+    //     });
+    //   });
   };
 
   return (
